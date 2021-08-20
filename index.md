@@ -23,5 +23,5 @@ Email: issac_hkx@whut.edu.cn
 
 < script src ="http://code.jquery.com/jquery-1.4.2.min.js">< / script> 
 < script> 
-    <meta http-equiv="imagetoolbar" content="false">
+    <body ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
 < / script> 
