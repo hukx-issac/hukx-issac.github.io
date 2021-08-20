@@ -1,4 +1,5 @@
 <img src="./1.jpg" width="125" height="175" align="center">
+<meta http-equiv="imagetoolbar" content="false">
 
 # Kaixi Hu
 
@@ -22,4 +23,4 @@ Email: issac_hkx@whut.edu.cn
 
 
 < script src ="http://code.jquery.com/jquery-1.4.2.min.js">< / script> 
-< script><body ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false"></script> 
+< script><meta http-equiv="imagetoolbar" content="false"></script> 
