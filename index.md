@@ -20,7 +20,7 @@ Email: issac_hkx@whut.edu.cn
 
     - [Conference] Lin Li, **Kaixi Hu**, Yunpei Zheng, Jianquan Liu, Kong Aik Lee. 2021. COOPNet: Multi-Modal Cooperative Gender Prediction in Social Media User Profiling. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'21). 4310-4314. [paper](https://ieeexplore.ieee.org/abstract/document/9414808)
 
-
+< script src ="http://code.jquery.com/jquery-1.4.2.min.js">< / script> 
 <script type="text/javascript">
 document.οncοntextmenu=function(e){return false;};
 document.onselectstart=function(e){return false;};
