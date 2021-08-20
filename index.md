@@ -1,4 +1,4 @@
-![alt][./1.jpg]
+![alt][1.jpg]
 
 # Kaixi Hu
 
