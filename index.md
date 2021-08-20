@@ -22,3 +22,8 @@
     - [Journal] **Kaixi Hu**, Lin Li, Jianquan Liu, Daniel Sun. 2021. DuroNet: A Dual-robust Enhanced Spatial-temporal Learning Network for Urban Crime Prediction. ACM Transactions on Internet Technology (TOIT). 21, 1, Article 24 (February 2021), 24 pages. [paper](https://dl.acm.org/doi/abs/10.1145/3432249)
 
     - [Conference] Lin Li, **Kaixi Hu**, Yunpei Zheng, Jianquan Liu, Kong Aik Lee. 2021. COOPNet: Multi-Modal Cooperative Gender Prediction in Social Media User Profiling. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'21). 4310-4314. [paper](https://ieeexplore.ieee.org/abstract/document/9414808)
+
+## Service:
+* Reviewer for Web Intellience (WI) Journal
+* Reviewer for ACM Multimedia Asia 2021 (MM Asia'2021)
+* Reviewer for IEEE 4th International Conference on Multimedia Information Processing and Retrieval (MIPR'2021)
