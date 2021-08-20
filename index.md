@@ -1,4 +1,4 @@
-<img src="./1.jpg" width="295" height="413" align="center">
+<img src="./1.jpg" width="29.5" height="41.3" align="center" onselectstart=“return false” or οnselect=“return false>
 
 # Kaixi Hu
 
