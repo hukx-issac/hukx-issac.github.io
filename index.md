@@ -1,4 +1,5 @@
-![alt](/pictures/img/1.jpg)
+![alt](./1.jpg)
+
 # Kaixi Hu
 
 Email: issac_hkx@whut.edu.cn
