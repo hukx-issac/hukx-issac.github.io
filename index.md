@@ -5,7 +5,7 @@
 
 # Kaixi Hu
 
-**Email:** <font color="#0000dd">issac_hkx@whut.edu.cn</font>
+**Email: <font color="#0000dd">issac_hkx@whut.edu.cn</font>**
 
 > Kaixi Hu received the Master degree from the School of Automation, at Chongqing University. Currently, He is a Ph.D. candidate in the School of Computer and Artificial Intelligence, Wuhan University of Technology. His supervisor is Prof. Lin Li.
 
