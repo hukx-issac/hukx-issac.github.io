@@ -1,4 +1,4 @@
-![service life image][1.jpg]
+![alt](/pictures/img/1.jpg)
 # Kaixi Hu
 
 Email: issac_hkx@whut.edu.cn
