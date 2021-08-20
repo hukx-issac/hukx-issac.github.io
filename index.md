@@ -1,4 +1,7 @@
-<img src="./1.jpg" width="125" height="175" align="center">
+<div align="center" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+  <img src="./1.jpg" width="125" height="175">
+</div>
+
 
 # Kaixi Hu
 
@@ -19,43 +22,3 @@ Email: issac_hkx@whut.edu.cn
     - [Journal] **Kaixi Hu**, Lin Li, Jianquan Liu, Daniel Sun. 2021. DuroNet: A Dual-robust Enhanced Spatial-temporal Learning Network for Urban Crime Prediction. ACM Transactions on Internet Technology (TOIT). 21, 1, Article 24 (February 2021), 24 pages. [paper](https://dl.acm.org/doi/abs/10.1145/3432249)
 
     - [Conference] Lin Li, **Kaixi Hu**, Yunpei Zheng, Jianquan Liu, Kong Aik Lee. 2021. COOPNet: Multi-Modal Cooperative Gender Prediction in Social Media User Profiling. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'21). 4310-4314. [paper](https://ieeexplore.ieee.org/abstract/document/9414808)
-
-
-< script src ="http://code.jquery.com/jquery-1.4.2.min.js">< / script> 
-< script>
-<script language="JavaScript"> 
-<!-- 
-
-if (window.Event) 
-document.captureEvents(Event.MOUSEUP); 
-
-function nocontextmenu() 
-{ 
-event.cancelBubble = true 
-event.returnValue = false; 
-
-return false; 
-} 
-
-function norightclick(e) 
-{ 
-if (window.Event) 
-{ 
-if (e.which == 2 || e.which == 3) 
-return false; 
-} 
-else 
-if (event.button == 2 || event.button == 3) 
-{ 
-event.cancelBubble = true 
-event.returnValue = false; 
-return false; 
-} 
-
-} 
-
-document.oncontextmenu = nocontextmenu; // for IE5+ 
-document.onmousedown = norightclick; // for all others 
-//--> 
-</script>
-</script> 
