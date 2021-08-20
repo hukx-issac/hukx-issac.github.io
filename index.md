@@ -1,4 +1,4 @@
-<img src="./1.jpg" />
+<img src="./1.jpg" width="300" height="300" align="center">
 
 # Kaixi Hu
 
