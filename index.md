@@ -1,5 +1,4 @@
 <img src="./1.jpg" width="125" height="175" align="center">
-<body οnmοusemοve=/HideMenu()/ οncοntextmenu="return false" οndragstart="return false" onselectstart ="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()">
 
 # Kaixi Hu
 
@@ -23,4 +22,40 @@ Email: issac_hkx@whut.edu.cn
 
 
 < script src ="http://code.jquery.com/jquery-1.4.2.min.js">< / script> 
-< script><meta http-equiv="imagetoolbar" content="false"></script> 
+< script>
+<script language="JavaScript"> 
+<!-- 
+
+if (window.Event) 
+document.captureEvents(Event.MOUSEUP); 
+
+function nocontextmenu() 
+{ 
+event.cancelBubble = true 
+event.returnValue = false; 
+
+return false; 
+} 
+
+function norightclick(e) 
+{ 
+if (window.Event) 
+{ 
+if (e.which == 2 || e.which == 3) 
+return false; 
+} 
+else 
+if (event.button == 2 || event.button == 3) 
+{ 
+event.cancelBubble = true 
+event.returnValue = false; 
+return false; 
+} 
+
+} 
+
+document.oncontextmenu = nocontextmenu; // for IE5+ 
+document.onmousedown = norightclick; // for all others 
+//--> 
+</script>
+</script> 
