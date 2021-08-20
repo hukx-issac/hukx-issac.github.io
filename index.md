@@ -1,5 +1,5 @@
 <img src="./1.jpg" width="125" height="175" align="center">
-<meta http-equiv="imagetoolbar" content="false">
+<body οnmοusemοve=/HideMenu()/ οncοntextmenu="return false" οndragstart="return false" onselectstart ="return false" οnselect="document.selection.empty()" οncοpy="document.selection.empty()" onbeforecopy="return false" οnmοuseup="document.selection.empty()">
 
 # Kaixi Hu
 
