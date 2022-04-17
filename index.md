@@ -7,7 +7,7 @@
 
 **Email: <font color="#0000dd">issac_hkx@whut.edu.cn</font>**
 
-> Kaixi Hu received the Master degree from the School of Automation, at Chongqing University. Currently, He is a Ph.D. candidate in the School of Computer and Artificial Intelligence, Wuhan University of Technology. His supervisor is Prof. Lin Li.
+> Kaixi Hu received the Master degree from the School of Automation, at Chongqing University. Currently, He is a Ph.D. candidate in the School of Computer Science and Artificial Intelligence, Wuhan University of Technology. His supervisor is Prof. Lin Li.
 
 ## Research Interests:
 * Time Series Analysis
@@ -17,7 +17,7 @@
 ## Publications:
 * <u>In the Year of 2021:</u>
 
-    - [Conference] **Kaixi Hu**, Lin Li, Jianquan Liu, Qing Xie, Jianquan Liu, Xiaohui Tao. 2021. What is Next when Sequential Prediction Meets Implicitly Hard Interaction?. Proceedings of the 30th ACM International Conference on Information and Knowledge Management (CIKM'21). [accepted] 
+    - [Conference] **Kaixi Hu**, Lin Li, Jianquan Liu, Qing Xie, Jianquan Liu, Xiaohui Tao. 2021. What is Next when Sequential Prediction Meets Implicitly Hard Interaction?. Proceedings of the 30th ACM International Conference on Information and Knowledge Management (CIKM'21). [paper](https://dl.acm.org/doi/10.1145/3459637.3482492)
 
     - [Journal] **Kaixi Hu**, Lin Li, Jianquan Liu, Daniel Sun. 2021. DuroNet: A Dual-robust Enhanced Spatial-temporal Learning Network for Urban Crime Prediction. ACM Transactions on Internet Technology (TOIT). 21, 1, Article 24 (February 2021), 24 pages. [paper](https://dl.acm.org/doi/abs/10.1145/3432249)
 
@@ -26,4 +26,4 @@
 ## Service:
 * Reviewer for Web Intellience (WI) Journal
 * Reviewer for ACM Multimedia Asia 2021 (MM Asia'2021)
-* Reviewer for IEEE 4th International Conference on Multimedia Information Processing and Retrieval (MIPR'2021)
+* Reviewer for IEEE MIPR'2021, MIPR'2022
