@@ -25,5 +25,5 @@
 
 ## Service:
 * Reviewer for Web Intellience (WI) Journal
-* Reviewer for ACM Multimedia Asia 2021 (MM Asia'2021)
+* Reviewer for ACM Multimedia Asia 2021 (MM Asia'2021), MM Asia'2022
 * Reviewer for IEEE MIPR'2021, MIPR'2022
