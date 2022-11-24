@@ -15,6 +15,8 @@
 * Sequential Prediction/Recommendation
 
 ## Publications:
+* <u>In the Year of 2022:</u>
+
 * <u>In the Year of 2021:</u>
 
     - [Conference] **Kaixi Hu**, Lin Li, Jianquan Liu, Qing Xie, Jianquan Liu, Xiaohui Tao. 2021. What is Next when Sequential Prediction Meets Implicitly Hard Interaction?. Proceedings of the 30th ACM International Conference on Information and Knowledge Management (CIKM'21). [paper](https://dl.acm.org/doi/10.1145/3459637.3482492)
@@ -24,6 +26,7 @@
     - [Conference] Lin Li, **Kaixi Hu**, Yunpei Zheng, Jianquan Liu, Kong Aik Lee. 2021. COOPNet: Multi-Modal Cooperative Gender Prediction in Social Media User Profiling. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'21). 4310-4314. [paper](https://ieeexplore.ieee.org/abstract/document/9414808)
 
 ## Service:
-* Reviewer for Web Intellience (WI) Journal
+* Reviewer for Web Intellience (WI) Journal (EI, CCF C)
+* Reviewer for ICASSP 2023 (CCF B)
 * Reviewer for ACM Multimedia Asia (MM Asia'2021, MM Asia'2022)
 * Reviewer for IEEE MIPR'2021, MIPR'2022
