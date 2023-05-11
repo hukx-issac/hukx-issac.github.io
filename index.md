@@ -8,7 +8,7 @@
 **Email: <font color="#0000dd">issac_hkx@whut.edu.cn</font>**
 
 > Kaixi Hu received the Master degree from the School of Automation, at Chongqing University. He is a Ph.D. candidate in the School of Computer Science and Artificial Intelligence, Wuhan University of Technology. His supervisor is Prof. Lin Li. Currently, He is a visiting PhD student at University of Technology Sydney, Australia (2022–2023) with
-the support from China Scholarship Council (CSC).
+the support from China Scholarship Council (CSC). The co-supervisor is Prof. Guandong Xu.
 
 ## Research Interests:
 * Sequential Prediction
