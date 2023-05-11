@@ -17,9 +17,9 @@
 ## Publications:
 * <u>In the Year of 2022:</u>
 
-- [Journal] **Kaixi Hu**, Lin Li, Xiaohua Wu, Qing Xie, Jingling Yuan. 2022. A Sequential Recommendation Method Enhanced by Peer Knowledge (一种同伴知识互增强下的序列推荐方法). Acta Automatica Sinica (自动化学报). [paper](http://dx.doi.org/10.16383/j.aas.c220347)
+    - [Journal] **Kaixi Hu**, Lin Li, Xiaohua Wu, Qing Xie, Jingling Yuan. 2022. A Sequential Recommendation Method Enhanced by Peer Knowledge (一种同伴知识互增强下的序列推荐方法). Acta Automatica Sinica (自动化学报). [paper](http://dx.doi.org/10.16383/j.aas.c220347)
 
-- [Conference] Lin Li, **Kaixi Hu**, Turghun Tayir, Jianquan Liu, Kong Aik Lee. 2022. Noise-Robust Semi-supervised Multi-modal Machine Translation. Proceedings of the 19th Pacific Rim International Conference on Artificial Intelligence (PRICAI 2022), Shanghai, China, November 10–13. [paper](https://doi.org/10.1007/978-3-031-20865-2_12)
+    - [Conference] Lin Li, **Kaixi Hu**, Turghun Tayir, Jianquan Liu, Kong Aik Lee. 2022. Noise-Robust Semi-supervised Multi-modal Machine Translation. Proceedings of the 19th Pacific Rim International Conference on Artificial Intelligence (PRICAI 2022), Shanghai, China, November 10–13. [paper](https://doi.org/10.1007/978-3-031-20865-2_12)
 
 * <u>In the Year of 2021:</u>
 
