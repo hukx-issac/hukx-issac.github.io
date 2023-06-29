@@ -16,9 +16,7 @@ the support from China Scholarship Council (CSC). The co-supervisor is Prof. Gua
 * Knowledge Distillation
 
 ## Publications:
-* <u>In the Year of 2023:</u>
 
-    - [Journal] **Kaixi Hu**, Lin Li, Xiaohui Tao, Juan D. Velásquez, and Patrick Delaney. 2023. Information fusion in crime event analysis: A decade survey on data, features and models. Information Fusion. ACCEPTED.
     
 * <u>In the Year of 2022:</u>
 
