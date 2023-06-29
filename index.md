@@ -18,21 +18,21 @@
 
 * <u>In the Year of 2023:</u>
 
-    - [Journal] **Kaixi Hu**, Lin Li, Xiaohui Tao, Juan D. Velásquez, and Patrick Delaney. 2023. Information fusion in crime event analysis: A decade survey on data, features and models. Information fusion. Accepted.
+    - [Journal] **Kaixi Hu**, Lin Li, Xiaohui Tao, Juan D. Velásquez, and Patrick Delaney. 2023. Information fusion in crime event analysis: A decade survey on data, features and models. Information fusion. Accepted. (JCR Q1, IF=17.564)
 
 * <u>In the Year of 2022:</u>
 
-    - [Journal] **Kaixi Hu**, Lin Li, Xiaohua Wu, Qing Xie, Jingling Yuan. 2022. A Sequential Recommendation Method Enhanced by Peer Knowledge (一种同伴知识互增强下的序列推荐方法). Acta Automatica Sinica (自动化学报). [paper](http://dx.doi.org/10.16383/j.aas.c220347)
+    - [Journal] **Kaixi Hu**, Lin Li, Xiaohua Wu, Qing Xie, Jingling Yuan. 2022. A Sequential Recommendation Method Enhanced by Peer Knowledge (一种同伴知识互增强下的序列推荐方法). Acta Automatica Sinica (自动化学报). (CCF T1) [paper](http://dx.doi.org/10.16383/j.aas.c220347)
 
-    - [Conference] Lin Li, **Kaixi Hu**, Turghun Tayir, Jianquan Liu, Kong Aik Lee. 2022. Noise-Robust Semi-supervised Multi-modal Machine Translation. Proceedings of the 19th Pacific Rim International Conference on Artificial Intelligence (PRICAI 2022), Shanghai, China, November 10–13. [paper](https://doi.org/10.1007/978-3-031-20865-2_12)
+    - [Conference] Lin Li, **Kaixi Hu**, Turghun Tayir, Jianquan Liu, Kong Aik Lee. 2022. Noise-Robust Semi-supervised Multi-modal Machine Translation. Proceedings of the 19th Pacific Rim International Conference on Artificial Intelligence (PRICAI 2022), Shanghai, China, November 10–13. (CCF C) [paper](https://doi.org/10.1007/978-3-031-20865-2_12)
 
 * <u>In the Year of 2021:</u>
 
-    - [Conference] **Kaixi Hu**, Lin Li, Jianquan Liu, Qing Xie, Jianquan Liu, Xiaohui Tao. 2021. What is Next when Sequential Prediction Meets Implicitly Hard Interaction?. Proceedings of the 30th ACM International Conference on Information and Knowledge Management (CIKM'21). [paper](https://dl.acm.org/doi/10.1145/3459637.3482492)
+    - [Conference] **Kaixi Hu**, Lin Li, Jianquan Liu, Qing Xie, Jianquan Liu, Xiaohui Tao. 2021. What is Next when Sequential Prediction Meets Implicitly Hard Interaction?. Proceedings of the 30th ACM International Conference on Information and Knowledge Management (CIKM'21). (CCF B)[paper](https://dl.acm.org/doi/10.1145/3459637.3482492)
 
-    - [Journal] **Kaixi Hu**, Lin Li, Jianquan Liu, Daniel Sun. 2021. DuroNet: A Dual-robust Enhanced Spatial-temporal Learning Network for Urban Crime Prediction. ACM Transactions on Internet Technology (TOIT). 21, 1, Article 24 (February 2021), 24 pages. [paper](https://dl.acm.org/doi/abs/10.1145/3432249)
+    - [Journal] **Kaixi Hu**, Lin Li, Jianquan Liu, Daniel Sun. 2021. DuroNet: A Dual-robust Enhanced Spatial-temporal Learning Network for Urban Crime Prediction. ACM Transactions on Internet Technology (TOIT). 21, 1, Article 24 (February 2021), 24 pages. (CCF B, JCR Q1)[paper](https://dl.acm.org/doi/abs/10.1145/3432249)
 
-    - [Conference] Lin Li, **Kaixi Hu**, Yunpei Zheng, Jianquan Liu, Kong Aik Lee. 2021. COOPNet: Multi-Modal Cooperative Gender Prediction in Social Media User Profiling. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'21). 4310-4314. [paper](https://ieeexplore.ieee.org/abstract/document/9414808)
+    - [Conference] Lin Li, **Kaixi Hu**, Yunpei Zheng, Jianquan Liu, Kong Aik Lee. 2021. COOPNet: Multi-Modal Cooperative Gender Prediction in Social Media User Profiling. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'21). 4310-4314. (CCF B) [paper](https://ieeexplore.ieee.org/abstract/document/9414808)
 
 ## Service:
 * Reviewer for World Wide Web Journal (SCI, CCF B)
