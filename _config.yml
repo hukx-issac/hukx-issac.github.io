@@ -23,11 +23,11 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Kaixi Hu"
-  pronouns         : "he"  
+  pronouns         : #"he"  
   bio              : "PhD Candidate"
   location         : "Wuhan, China"
   employer         : "Wuhan University of Technology"
-  uri              : # URL
+  uri              : "https://hukx-issac.github.io"
   email            : "issac_hkx@whut.edu.cn" 
 
   # Academic websites
@@ -35,8 +35,8 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=x0D8owcAAAAJ&hl=en&oi=ao"
   impactstory      : # URL
   orcid            : "https://orcid.org/0000-0002-6774-8510"
-  semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  semantic         : "https://www.semanticscholar.org/author/Kaixi-Hu/2000918408"
+  pubmed           : # URL
   researchgate     : # URL
 
   # Repositories and software development
