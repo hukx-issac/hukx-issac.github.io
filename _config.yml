@@ -12,7 +12,7 @@ title                    : "Kaixi Hu"
 title_separator          : "-"
 name                     : &name "Kaixi Hu"
 description              : &description "personal description"
-url                      : https://kxhu.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://hukx-issac.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
 
