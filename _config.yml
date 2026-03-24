@@ -9,11 +9,11 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Your Name / Site Title"
+title                    : "Kaixi Hu"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Kaixi Hu"
 description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+url                      : https://hukx-issac.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -23,25 +23,26 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  avatar           : "Kaixi.png"#"profile.png"
+  name             : "Kaixi Hu (胡开喜)"
+#  pronouns         : ""# example: "she/her"
+  bio              : "Dr. Hu received his Ph.D. in Computer Science and Technology from Wuhan University of Technology and is currently a lecturer in the School of Computer Science and Artificial Intelligence at Wuhan Textile University."
+  location         : "Wuhan 430200, China"
+  employer         : "Wuhan Textile University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "kxhu@wtu.edu.cn"
 
   # Academic websites
-  academia         : # URL
+  academia             : "https://dblp.uni-trier.de/pid/277/2325.html"
+#  academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=x0D8owcAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
-  semantic         : # URL
+  orcid            : "https://orcid.org/0000-0002-6774-8510"
+  semantic         : "https://www.semanticscholar.org/author/Kaixi-Hu/2000918408" # URLSSS
   ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
   scopus           : # URL
   zotero           : # URL
@@ -51,13 +52,13 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "hukx-issac"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
   artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -66,7 +67,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "kaixi-hu-4a5230180/"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -155,7 +156,7 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               :  "google" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
     tracking_id          :
 
