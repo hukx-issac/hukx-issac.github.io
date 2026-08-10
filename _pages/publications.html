@@ -1,36 +1,82 @@
 ---
 layout: archive
-title: "Publications"
+title: "Selected Publications"
 permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<section class="publications-page" aria-label="Publication list">
+  <div class="publications-intro">
+    {% if site.author.googlescholar %}
+      <a class="publications-intro__scholar" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener">Full list on Google Scholar</a>
+    {% endif %}
+  </div>
 
-{% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
+  {% assign publication_years = site.publications | sort: 'year' | reverse %}
+  {% for year_group in publication_years %}
+    <h2 class="publication-year">{{ year_group.year }}</h2>
+    {% for publication in year_group.publications %}
+      {% include publication-card.html publication=publication year=year_group.year %}
     {% endfor %}
   {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+</section>
 
+<script>
+  document.addEventListener('click', function (event) {
+    var toggle = event.target.closest('.publication-card__bibtex-toggle');
+    if (toggle) {
+      var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+      if (!panel) return;
 
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      panel.hidden = expanded;
+      return;
+    }
 
+    var button = event.target.closest('.publication-card__copy');
+    if (!button) return;
+
+    var code = document.getElementById(button.getAttribute('data-copy-target'));
+    if (!code) return;
+
+    var text = code.textContent;
+    var copyText = function () {
+      var textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      var copied = document.execCommand('copy');
+      textarea.remove();
+      return copied ? Promise.resolve() : Promise.reject(new Error('Copy command failed'));
+    };
+
+    var copyOperation = navigator.clipboard && window.isSecureContext
+      ? navigator.clipboard.writeText(text).catch(copyText)
+      : copyText();
+
+    copyOperation.then(function () {
+      var label = button.querySelector('span');
+      var original = label.textContent;
+      label.textContent = 'Copied!';
+      button.classList.add('is-copied');
+      window.setTimeout(function () {
+        label.textContent = original;
+        button.classList.remove('is-copied');
+      }, 1600);
+    }).catch(function () {
+      var label = button.querySelector('span');
+      var original = label.textContent;
+      label.textContent = 'Copy failed';
+      window.setTimeout(function () {
+        label.textContent = original;
+      }, 1600);
+    });
+  });
+</script>

@@ -1,0 +1,79 @@
+{% assign publication = include.publication %}
+{% assign publication_year = include.year %}
+{% assign author_text = publication.authors %}
+{% assign author_text = author_text | replace: 'K. Hu', '<strong>K. Hu</strong>' %}
+{% assign code_link = publication.githuburl %}
+{% assign scholar_link = publication.scholarurl %}
+{% assign bibtex_content = publication.BibTeX %}
+{% assign bibtex_id = publication.title | slugify | prepend: 'bibtex-' %}
+{% assign bibtex_panel_id = bibtex_id | append: '-panel' %}
+{% case publication.category %}
+  {% when 'manuscripts' %}
+    {% assign publication_type = 'Journal' %}
+  {% when 'conferences' %}
+    {% assign publication_type = 'Conference' %}
+  {% when 'preprints' %}
+    {% assign publication_type = 'Preprint' %}
+  {% else %}
+    {% assign publication_type = 'Publication' %}
+{% endcase %}
+
+<article class="publication-card">
+  <div class="publication-card__visual" aria-hidden="true">
+    {% if publication.image and publication.image != empty %}
+      <img src="{{ publication.image | relative_url }}" alt="" loading="lazy">
+    {% else %}
+      <span>{{ publication_type }}<br>{{ publication_year }}</span>
+    {% endif %}
+  </div>
+  <div class="publication-card__content">
+    <div class="publication-card__badges">
+      <span class="publication-card__badge">{{ publication_type }}</span>
+      {% if publication.badges and publication.badges != empty %}
+        {% for badge in publication.badges %}
+          {% if badge and badge != empty %}
+            <span class="publication-card__badge publication-card__badge--custom">{{ badge }}</span>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+    <h3 class="publication-card__title">
+      {{ publication.title }}
+    </h3>
+    <p class="publication-card__authors">{{ author_text }}</p>
+    <p class="publication-card__venue">{{ publication.venue }}, {{ publication_year }}.</p>
+    <div class="publication-card__links" aria-label="Publication resources">
+      {% if publication.paperurl and publication.paperurl != empty %}
+        <a class="publication-card__action" href="{{ publication.paperurl }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> Paper</a>
+      {% endif %}
+      {% if publication.slidesurl and publication.slidesurl != empty %}
+        <a class="publication-card__action" href="{{ publication.slidesurl }}" target="_blank" rel="noopener"><i class="fas fa-desktop" aria-hidden="true"></i> Slides</a>
+      {% endif %}
+      {% if code_link and code_link != empty %}
+        <a class="publication-card__action" href="{{ code_link }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+      {% endif %}
+      {% if publication.projecturl and publication.projecturl != empty %}
+        <a class="publication-card__action" href="{{ publication.projecturl }}" target="_blank" rel="noopener"><i class="fas fa-globe" aria-hidden="true"></i> Project</a>
+      {% endif %}
+      {% if publication.videourl and publication.videourl != empty %}
+        <a class="publication-card__action" href="{{ publication.videourl }}" target="_blank" rel="noopener"><i class="fas fa-video" aria-hidden="true"></i> Video</a>
+      {% endif %}
+      {% if scholar_link and scholar_link != empty %}
+        <a class="publication-card__action" href="{{ scholar_link }}" target="_blank" rel="noopener"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Scholar</a>
+      {% endif %}
+      {% if bibtex_content and bibtex_content != empty %}
+        <button class="publication-card__action publication-card__bibtex-toggle" type="button" aria-expanded="false" aria-controls="{{ bibtex_panel_id }}">
+          <i class="fas fa-quote-right" aria-hidden="true"></i> BibTeX
+        </button>
+      {% endif %}
+    </div>
+    {% if bibtex_content and bibtex_content != empty %}
+      <div class="publication-card__bibtex-panel" id="{{ bibtex_panel_id }}" hidden>
+        <button class="publication-card__copy" type="button" data-copy-target="{{ bibtex_id }}" aria-label="Copy BibTeX to clipboard">
+          <i class="fas fa-copy" aria-hidden="true"></i> <span>Copy</span>
+        </button>
+        <pre><code id="{{ bibtex_id }}">{{ bibtex_content | escape }}</code></pre>
+      </div>
+    {% endif %}
+  </div>
+</article>
