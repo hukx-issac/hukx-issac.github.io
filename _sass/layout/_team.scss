@@ -1,0 +1,129 @@
+/* ========================================================================== 
+   TEAM
+   ========================================================================== */
+
+.team-page {
+  --team-accent: #3f729b;
+  --team-accent-soft: rgba(63, 114, 155, 0.1);
+
+  .team-page__intro {
+    margin: 0.5rem 0 1.8rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--team-accent);
+    color: var(--global-text-color-light);
+    font-size: 0.85rem;
+  }
+
+  .team-section {
+    margin: 0 0 2.4rem;
+  }
+
+  .team-section > h2 {
+    margin: 0 0 1rem;
+    border-bottom: 1px solid var(--global-border-color);
+    color: var(--global-text-color);
+    font-family: $sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+
+  .team-member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1rem;
+  }
+
+  .team-member-card {
+    overflow: hidden;
+    border: 1px solid var(--global-border-color);
+    border-radius: 6px;
+    background: var(--global-bg-color);
+    text-align: center;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .team-member-card:hover {
+    border-color: var(--team-accent);
+    transform: translateY(-2px);
+  }
+
+  .team-member-card__link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .team-member-card__link:hover {
+    text-decoration: none;
+  }
+
+  .team-member-card__photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center top;
+    background: var(--team-accent-soft);
+  }
+
+  .team-member-card__details {
+    padding: 0.75rem 0.6rem 0.85rem;
+  }
+
+  .team-member-card__details h3,
+  .team-alumni-card h3 {
+    margin: 0;
+    border: 0;
+    font-family: $sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .team-member-card__details p,
+  .team-alumni-card p {
+    margin: 0.18rem 0 0;
+    color: var(--global-text-color-light);
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
+  .team-alumni-list {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .team-alumni-card {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.4fr) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.75rem 0.9rem;
+    border-left: 3px solid var(--team-accent);
+    background: var(--team-accent-soft);
+  }
+
+  .team-alumni-card p {
+    margin: 0;
+  }
+
+  .team-section__empty {
+    margin: 0;
+    padding: 0.8rem 0;
+    color: var(--global-text-color-light);
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-page {
+    .team-member-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .team-alumni-card {
+      grid-template-columns: 1fr;
+      gap: 0.18rem;
+    }
+  }
+}

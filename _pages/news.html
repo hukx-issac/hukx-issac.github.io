@@ -1,0 +1,55 @@
+---
+layout: archive
+title: "News"
+permalink: /news/
+redirect_from:
+  - /year-archive/
+  - /wordpress/blog-posts/
+author_profile: true
+---
+
+<div class="news-page">
+  <p class="news-page__intro">Research highlights, publications, and team updates.</p>
+
+  {% assign news_years = site.news | sort: 'year' | reverse %}
+  {% assign has_pinned_news = false %}
+  {% for year_group in news_years %}
+    {% for item in year_group.items %}
+      {% if item.pinned == true %}{% assign has_pinned_news = true %}{% endif %}
+    {% endfor %}
+  {% endfor %}
+
+  {% if has_pinned_news %}
+    <section class="news-section news-section--pinned" aria-labelledby="pinned-news">
+      <h2 id="pinned-news"><i class="fas fa-thumbtack" aria-hidden="true"></i> Pinned News</h2>
+      <div class="news-list">
+        {% for year_group in news_years %}
+          {% for item in year_group.items %}
+            {% if item.pinned == true %}
+              {% include news-card.html item=item year=year_group.year pinned=true %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% for year_group in news_years %}
+    {% assign has_regular_news = false %}
+    {% for item in year_group.items %}
+      {% unless item.pinned == true %}{% assign has_regular_news = true %}{% endunless %}
+    {% endfor %}
+    {% if has_regular_news %}
+      <section class="news-section" aria-labelledby="news-{{ year_group.year }}">
+        <h2 id="news-{{ year_group.year }}">{{ year_group.year }}</h2>
+        <div class="news-list">
+          {% for item in year_group.items %}
+            {% unless item.pinned == true %}
+              {% include news-card.html item=item year=year_group.year %}
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% endfor %}
+</div>

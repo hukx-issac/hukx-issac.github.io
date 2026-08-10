@@ -1,0 +1,24 @@
+{% assign news_item = include.item %}
+<article class="news-card{% if news_item.image and news_item.image != empty %} news-card--with-image{% endif %}{% if include.pinned %} news-card--pinned{% endif %}">
+  {% if news_item.image and news_item.image != empty %}
+    <div class="news-card__visual">
+      <img src="{{ news_item.image | relative_url }}" alt="{{ news_item.image_alt | default: news_item.title }}" loading="lazy">
+    </div>
+  {% endif %}
+  <div class="news-card__content">
+    <div class="news-card__meta">
+      {% if news_item.date and news_item.date != empty %}<time>{{ news_item.date }}</time>{% else %}<time>{{ include.year }}</time>{% endif %}
+      {% if news_item.category and news_item.category != empty %}<span>{{ news_item.category }}</span>{% endif %}
+      {% if include.pinned %}<span class="news-card__pin"><i class="fas fa-thumbtack" aria-hidden="true"></i> Pinned</span>{% endif %}
+    </div>
+    <h3>{{ news_item.title }}</h3>
+    {% if news_item.content and news_item.content != empty %}
+      <div class="news-card__text">{{ news_item.content | markdownify }}</div>
+    {% endif %}
+    {% if news_item.link and news_item.link != empty %}
+      <a class="news-card__link" href="{{ news_item.link }}" target="_blank" rel="noopener">
+        {{ news_item.link_label | default: 'Learn more' }} <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    {% endif %}
+  </div>
+</article>

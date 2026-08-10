@@ -21,10 +21,10 @@ main:
     url: /teaching/
 
   - title: "Team"
-    url: /talks/
+    url: /team/
 
   - title: "News"
-    url: /year-archive/
+    url: /news/
 
     
 #  - title: "Portfolio"
