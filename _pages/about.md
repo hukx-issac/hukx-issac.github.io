@@ -48,18 +48,24 @@ document.addEventListener("DOMContentLoaded", function () {
     {name: "Wuhan, China", coords: [30.5928, 114.3055], note: "Current location / work"},
     {name: "Chongqing, China", coords: [29.5630, 106.5516]},
     {name: "Shiyan, China", coords: [32.6292, 110.7980]},
-    {name: "Sydney, Australia", coords: [-33.8688, 151.2093]},
-    {name: "Gifu, Japan", coords: [35.4233, 136.7607]},
-    {name: "Tokyo, Japan", coords: [35.6762, 139.6503]},
+    {name: "Sydney, Australia", coords: [-33.8688, 151.2093], date: "December 2022–December 2023"},
+    {name: "Gifu, Japan", coords: [35.4233, 136.7607], date: "July 2024"},
+    {name: "Tokyo, Japan", coords: [35.6762, 139.6503], date: "July 2024"},
     {name: "Brisbane, Australia", coords: [-27.4698, 153.0251]},
+    {name: "Bangkok, Thailand", coords: [13.7563, 100.5018], date: "August 2026"},
     {name: "Guiyang, China",coords: [26.6470, 106.6302]},
-    {name: "Hong Kong, China", coords: [22.3193, 114.1694]}
+    {name: "Hong Kong, China", coords: [22.3193, 114.1694], date: "October 2025"}
     ];
 
   places.forEach(function (place) {
+    var popup = "<b>" + place.name + "</b>";
+    if (place.date) {
+      popup += "<br>Visited: " + place.date;
+    }
+
     L.marker(place.coords)
       .addTo(map)
-      .bindPopup("<b>" + place.name + "</b>");
+      .bindPopup(popup);
   });
 });
 </script>
