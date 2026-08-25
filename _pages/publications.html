@@ -13,23 +13,28 @@ author_profile: true
   </div>
 
   {% assign publication_years = site.publications | sort: 'year' | reverse %}
-  {% assign latest_publication_year = '' %}
-  {% for year_group in publication_years %}
-    {% if latest_publication_year == '' and year_group.publications and year_group.publications != empty %}
-      {% assign latest_publication_year = year_group.year %}
-    {% endif %}
-  {% endfor %}
 
-  <div class="publications-filter" aria-label="Filter publications by year">
-    <label for="publication-year-filter">Year</label>
-    <select id="publication-year-filter" data-default-year="{{ latest_publication_year }}">
-      <option value="all">All years</option>
-      {% for year_group in publication_years %}
-        {% if year_group.publications and year_group.publications != empty %}
-          <option value="{{ year_group.year }}"{% if year_group.year == latest_publication_year %} selected{% endif %}>{{ year_group.year }}</option>
-        {% endif %}
-      {% endfor %}
-    </select>
+  <div class="publications-filter" aria-label="Publication display settings">
+    <div class="publications-filter__field">
+      <label for="publication-year-filter">Year</label>
+      <select id="publication-year-filter" data-default-year="all">
+        <option value="all" selected>All years</option>
+        {% for year_group in publication_years %}
+          {% if year_group.publications and year_group.publications != empty %}
+            <option value="{{ year_group.year }}">{{ year_group.year }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+    <div class="publications-filter__field">
+      <label for="publication-page-size">Per page</label>
+      <select id="publication-page-size" data-default-size="25">
+        <option value="10">10</option>
+        <option value="25" selected>25</option>
+        <option value="50">50</option>
+        <option value="all">All</option>
+      </select>
+    </div>
     <span class="publications-filter__status" role="status" aria-live="polite"></span>
   </div>
 
@@ -43,47 +48,141 @@ author_profile: true
       </section>
     {% endif %}
   {% endfor %}
+
+  <nav class="publications-pagination" aria-label="Publication pages" hidden>
+    <button class="publications-pagination__button" type="button" data-page-action="previous">Previous</button>
+    <span class="publications-pagination__status" aria-live="polite"></span>
+    <button class="publications-pagination__button" type="button" data-page-action="next">Next</button>
+  </nav>
 </section>
 
 <script>
   (function () {
     var page = document.querySelector('.publications-page');
-    var filter = document.getElementById('publication-year-filter');
-    if (!page || !filter) return;
+    var yearFilter = document.getElementById('publication-year-filter');
+    var pageSizeFilter = document.getElementById('publication-page-size');
+    if (!page || !yearFilter || !pageSizeFilter) return;
 
     var groups = Array.prototype.slice.call(page.querySelectorAll('.publication-year-group'));
     var status = page.querySelector('.publications-filter__status');
-    var validYears = Array.prototype.map.call(filter.options, function (option) {
+    var pagination = page.querySelector('.publications-pagination');
+    var paginationStatus = page.querySelector('.publications-pagination__status');
+    var previousButton = page.querySelector('[data-page-action="previous"]');
+    var nextButton = page.querySelector('[data-page-action="next"]');
+    var validYears = Array.prototype.map.call(yearFilter.options, function (option) {
       return option.value;
     });
+    var validPageSizes = Array.prototype.map.call(pageSizeFilter.options, function (option) {
+      return option.value;
+    });
+    var currentPage = 1;
 
-    function showYear(year, updateUrl) {
-      var selectedYear = validYears.indexOf(year) !== -1 ? year : filter.getAttribute('data-default-year');
-      var visibleCount = 0;
+    function savedPageSize() {
+      try {
+        return window.localStorage.getItem('publicationsPerPage');
+      } catch (error) {
+        return null;
+      }
+    }
 
-      filter.value = selectedYear;
+    function savePageSize(value) {
+      try {
+        window.localStorage.setItem('publicationsPerPage', value);
+      } catch (error) {
+        // The selector still works when browser storage is unavailable.
+      }
+    }
+
+    function updateDisplay(updateUrl) {
+      var selectedYear = validYears.indexOf(yearFilter.value) !== -1
+        ? yearFilter.value
+        : yearFilter.getAttribute('data-default-year');
+      var selectedPageSize = validPageSizes.indexOf(pageSizeFilter.value) !== -1
+        ? pageSizeFilter.value
+        : pageSizeFilter.getAttribute('data-default-size');
+      var eligibleCards = [];
+
+      yearFilter.value = selectedYear;
+      pageSizeFilter.value = selectedPageSize;
       groups.forEach(function (group) {
-        var isVisible = selectedYear === 'all' || group.getAttribute('data-publication-year') === selectedYear;
-        group.hidden = !isVisible;
-        if (isVisible) visibleCount += group.querySelectorAll('.publication-card').length;
+        var matchesYear = selectedYear === 'all' || group.getAttribute('data-publication-year') === selectedYear;
+        Array.prototype.forEach.call(group.querySelectorAll('.publication-card'), function (card) {
+          card.hidden = true;
+          if (matchesYear) eligibleCards.push(card);
+        });
+        group.hidden = true;
       });
 
-      status.textContent = visibleCount + (visibleCount === 1 ? ' publication' : ' publications');
+      var perPage = selectedPageSize === 'all' ? Math.max(eligibleCards.length, 1) : parseInt(selectedPageSize, 10);
+      var totalPages = Math.max(Math.ceil(eligibleCards.length / perPage), 1);
+      currentPage = Math.min(Math.max(currentPage, 1), totalPages);
+
+      var start = (currentPage - 1) * perPage;
+      var end = Math.min(start + perPage, eligibleCards.length);
+      eligibleCards.slice(start, end).forEach(function (card) {
+        card.hidden = false;
+        card.closest('.publication-year-group').hidden = false;
+      });
+
+      status.textContent = eligibleCards.length
+        ? 'Showing ' + (start + 1) + '–' + end + ' of ' + eligibleCards.length + ' publications'
+        : 'No publications';
+      paginationStatus.textContent = 'Page ' + currentPage + ' of ' + totalPages;
+      previousButton.disabled = currentPage === 1;
+      nextButton.disabled = currentPage === totalPages;
+      pagination.hidden = totalPages <= 1;
 
       if (updateUrl && window.history && window.history.replaceState) {
         var url = new URL(window.location.href);
         url.searchParams.set('year', selectedYear);
+        url.searchParams.set('per_page', selectedPageSize);
+        if (currentPage > 1) {
+          url.searchParams.set('page', String(currentPage));
+        } else {
+          url.searchParams.delete('page');
+        }
         window.history.replaceState({}, '', url.pathname + url.search + url.hash);
       }
     }
 
     page.classList.add('publications-page--filter-enabled');
 
-    var requestedYear = new URLSearchParams(window.location.search).get('year');
-    showYear(requestedYear || filter.getAttribute('data-default-year'), false);
+    var parameters = new URLSearchParams(window.location.search);
+    var requestedYear = parameters.get('year');
+    var requestedPageSize = parameters.get('per_page');
+    var requestedPage = parseInt(parameters.get('page'), 10);
 
-    filter.addEventListener('change', function () {
-      showYear(filter.value, true);
+    yearFilter.value = validYears.indexOf(requestedYear) !== -1
+      ? requestedYear
+      : yearFilter.getAttribute('data-default-year');
+    var initialPageSize = validPageSizes.indexOf(requestedPageSize) !== -1 ? requestedPageSize : savedPageSize();
+    pageSizeFilter.value = validPageSizes.indexOf(initialPageSize) !== -1
+      ? initialPageSize
+      : pageSizeFilter.getAttribute('data-default-size');
+    currentPage = requestedPage > 0 ? requestedPage : 1;
+    updateDisplay(false);
+
+    yearFilter.addEventListener('change', function () {
+      currentPage = 1;
+      updateDisplay(true);
+    });
+
+    pageSizeFilter.addEventListener('change', function () {
+      currentPage = 1;
+      savePageSize(pageSizeFilter.value);
+      updateDisplay(true);
+    });
+
+    previousButton.addEventListener('click', function () {
+      currentPage -= 1;
+      updateDisplay(true);
+      page.querySelector('.publications-filter').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    nextButton.addEventListener('click', function () {
+      currentPage += 1;
+      updateDisplay(true);
+      page.querySelector('.publications-filter').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }());
 
