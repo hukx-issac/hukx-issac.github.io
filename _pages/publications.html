@@ -13,15 +13,80 @@ author_profile: true
   </div>
 
   {% assign publication_years = site.publications | sort: 'year' | reverse %}
+  {% assign latest_publication_year = '' %}
   {% for year_group in publication_years %}
-    <h2 class="publication-year">{{ year_group.year }}</h2>
-    {% for publication in year_group.publications %}
-      {% include publication-card.html publication=publication year=year_group.year %}
-    {% endfor %}
+    {% if latest_publication_year == '' and year_group.publications and year_group.publications != empty %}
+      {% assign latest_publication_year = year_group.year %}
+    {% endif %}
+  {% endfor %}
+
+  <div class="publications-filter" aria-label="Filter publications by year">
+    <label for="publication-year-filter">Year</label>
+    <select id="publication-year-filter" data-default-year="{{ latest_publication_year }}">
+      <option value="all">All years</option>
+      {% for year_group in publication_years %}
+        {% if year_group.publications and year_group.publications != empty %}
+          <option value="{{ year_group.year }}"{% if year_group.year == latest_publication_year %} selected{% endif %}>{{ year_group.year }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+    <span class="publications-filter__status" role="status" aria-live="polite"></span>
+  </div>
+
+  {% for year_group in publication_years %}
+    {% if year_group.publications and year_group.publications != empty %}
+      <section class="publication-year-group" data-publication-year="{{ year_group.year }}" aria-labelledby="publication-year-{{ year_group.year }}">
+        <h2 class="publication-year" id="publication-year-{{ year_group.year }}">{{ year_group.year }}</h2>
+        {% for publication in year_group.publications %}
+          {% include publication-card.html publication=publication year=year_group.year %}
+        {% endfor %}
+      </section>
+    {% endif %}
   {% endfor %}
 </section>
 
 <script>
+  (function () {
+    var page = document.querySelector('.publications-page');
+    var filter = document.getElementById('publication-year-filter');
+    if (!page || !filter) return;
+
+    var groups = Array.prototype.slice.call(page.querySelectorAll('.publication-year-group'));
+    var status = page.querySelector('.publications-filter__status');
+    var validYears = Array.prototype.map.call(filter.options, function (option) {
+      return option.value;
+    });
+
+    function showYear(year, updateUrl) {
+      var selectedYear = validYears.indexOf(year) !== -1 ? year : filter.getAttribute('data-default-year');
+      var visibleCount = 0;
+
+      filter.value = selectedYear;
+      groups.forEach(function (group) {
+        var isVisible = selectedYear === 'all' || group.getAttribute('data-publication-year') === selectedYear;
+        group.hidden = !isVisible;
+        if (isVisible) visibleCount += group.querySelectorAll('.publication-card').length;
+      });
+
+      status.textContent = visibleCount + (visibleCount === 1 ? ' publication' : ' publications');
+
+      if (updateUrl && window.history && window.history.replaceState) {
+        var url = new URL(window.location.href);
+        url.searchParams.set('year', selectedYear);
+        window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+      }
+    }
+
+    page.classList.add('publications-page--filter-enabled');
+
+    var requestedYear = new URLSearchParams(window.location.search).get('year');
+    showYear(requestedYear || filter.getAttribute('data-default-year'), false);
+
+    filter.addEventListener('change', function () {
+      showYear(filter.value, true);
+    });
+  }());
+
   document.addEventListener('click', function (event) {
     var toggle = event.target.closest('.publication-card__bibtex-toggle');
     if (toggle) {
